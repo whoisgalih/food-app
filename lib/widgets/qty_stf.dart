@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_app/theme/theme.dart';
 
-class QtyStf extends StatefulWidget {
+class QTY extends StatefulWidget {
   final double height;
   final TextStyle? textStyle;
 
-  const QtyStf({
+  const QTY({
     Key? key,
     this.height = 16.0,
     this.textStyle,
   }) : super(key: key);
 
   @override
-  State<QtyStf> createState() => _QtyStfState();
+  State<QTY> createState() => _QTYState();
 }
 
-class _QtyStfState extends State<QtyStf> {
+class _QTYState extends State<QTY> {
   int _qty = 1;
 
   int get quantity => _qty;

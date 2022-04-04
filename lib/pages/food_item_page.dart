@@ -151,7 +151,7 @@ class _FoodItemPageState extends State<FoodItemPage> {
                   margin: const EdgeInsets.all(20),
                   child: Row(
                     children: [
-                      const QtyStf(),
+                      const QTY(),
                       const SizedBox(width: 26),
                       Expanded(
                         child: CustomButton(
