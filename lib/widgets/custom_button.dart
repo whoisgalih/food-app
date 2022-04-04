@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:submission/theme/theme.dart';
+import 'package:food_app/theme/theme.dart';
 
 class CustomButton extends StatelessWidget {
   final VoidCallback onPressed;

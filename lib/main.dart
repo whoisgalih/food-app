@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:submission/pages/landing_page.dart';
-import 'package:submission/theme/theme.dart';
+import 'package:food_app/pages/landing_page.dart';
+import 'package:food_app/theme/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,10 +13,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Restaurant',
+      title: 'Food-app',
       theme: ThemeData(
           primaryColor: primary50,
-          scaffoldBackgroundColor: Color(0xFFF6F6F9),
+          scaffoldBackgroundColor: const Color(0xFFF9F9F9),
           textTheme: TextTheme(
             headline3: GoogleFonts.poppins(
                 fontWeight: FontWeight.w800, fontSize: 32, color: white),

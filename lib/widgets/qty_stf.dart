@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:submission/theme/theme.dart';
-
-typedef void IntCallback(int val);
+import 'package:food_app/theme/theme.dart';
 
 class QtyStf extends StatefulWidget {
-  final IntCallback callback;
   final double height;
   final TextStyle? textStyle;
 
@@ -13,7 +10,6 @@ class QtyStf extends StatefulWidget {
     Key? key,
     this.height = 16.0,
     this.textStyle,
-    required this.callback,
   }) : super(key: key);
 
   @override
@@ -29,7 +25,6 @@ class _QtyStfState extends State<QtyStf> {
     setState(() {
       _qty += 1;
     });
-    widget.callback(quantity);
   }
 
   void _substract() {
@@ -38,7 +33,6 @@ class _QtyStfState extends State<QtyStf> {
         _qty -= 1;
       });
     }
-    widget.callback(quantity);
   }
 
   @override

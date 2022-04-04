@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(submission LANGUAGES CXX)
+project(food_app LANGUAGES CXX)
 
-set(BINARY_NAME "submission")
+set(BINARY_NAME "food_app")
 
 cmake_policy(SET CMP0063 NEW)
 

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:submission/pages/food_page.dart';
-import 'package:submission/theme/theme.dart';
-import 'package:submission/widgets/custom_button.dart';
+import 'package:food_app/pages/food_page.dart';
+import 'package:food_app/theme/theme.dart';
+import 'package:food_app/widgets/custom_button.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({Key? key}) : super(key: key);
@@ -14,7 +13,7 @@ class LandingPage extends StatelessWidget {
         backgroundColor: primary50,
         body: SafeArea(
           child: Container(
-            margin: EdgeInsets.symmetric(horizontal: 48, vertical: 32),
+            margin: const EdgeInsets.symmetric(horizontal: 48, vertical: 32),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -23,8 +22,8 @@ class LandingPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      padding: EdgeInsets.all(20),
-                      decoration: BoxDecoration(
+                      padding: const EdgeInsets.all(20),
+                      decoration: const BoxDecoration(
                         color: Colors.white,
                         shape: BoxShape.circle,
                       ),
@@ -34,7 +33,7 @@ class LandingPage extends StatelessWidget {
                           height: 20,
                           width: 20),
                     ),
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
                     Text(
                       'Food for Everyone',
                       style: Theme.of(context).textTheme.headline3,
@@ -43,8 +42,10 @@ class LandingPage extends StatelessWidget {
                 ),
                 CustomButton(
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => FoodPage()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const FoodPage()));
                     },
                     isOrange: false,
                     text: 'Continue')

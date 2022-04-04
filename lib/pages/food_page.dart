@@ -1,12 +1,11 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/services.dart';
 
-import 'package:submission/theme/theme.dart';
-import 'package:submission/widgets/pill_text.dart';
-import 'package:submission/widgets/food_list.dart';
+import 'package:food_app/theme/theme.dart';
+import 'package:food_app/widgets/pill_text.dart';
+import 'package:food_app/widgets/food_list.dart';
 
 class FoodPage extends StatefulWidget {
   const FoodPage({Key? key}) : super(key: key);
@@ -21,7 +20,7 @@ class _FoodPageState extends State<FoodPage> {
   List<String> _tags = [];
   List<Map>? _searchResult;
   List<Map>? _filtered;
-  List<String> _filterTags = [];
+  final List<String> _filterTags = [];
 
   search(String text) {
     if (text == '') {
@@ -99,7 +98,7 @@ class _FoodPageState extends State<FoodPage> {
   Widget build(BuildContext context) {
     readJson();
     return Scaffold(
-      backgroundColor: Color(0xFFEEEEEE),
+      backgroundColor: const Color(0xFFEEEEEE),
       body: SafeArea(
         child: Column(
           children: [
@@ -111,7 +110,8 @@ class _FoodPageState extends State<FoodPage> {
                     children: [
                       GestureDetector(
                           onTap: () => Navigator.pop(context),
-                          child: Icon(Icons.chevron_left_rounded, size: 24)),
+                          child:
+                              const Icon(Icons.chevron_left_rounded, size: 24)),
                       const SizedBox(width: 16),
                       // Text('Food', style: title('2')),
                       Expanded(
@@ -121,12 +121,12 @@ class _FoodPageState extends State<FoodPage> {
                           onChanged: search(_controller.text),
                           decoration: InputDecoration(
                             filled: true,
-                            fillColor: Color(0xFFEFEEEE),
+                            fillColor: const Color(0xFFEFEEEE),
                             hintText: 'find food by name',
                             hintStyle: Theme.of(context)
                                 .textTheme
                                 .bodyText2
-                                ?.copyWith(color: Color(0xFF787777)),
+                                ?.copyWith(color: const Color(0xFF787777)),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(30),
                               borderSide: BorderSide.none,
@@ -144,7 +144,7 @@ class _FoodPageState extends State<FoodPage> {
                     ],
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 8),
+                    margin: const EdgeInsets.only(top: 8),
                     clipBehavior: Clip.none,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -186,21 +186,21 @@ class _FoodPageState extends State<FoodPage> {
               child: Container(
                 width: double.infinity,
                 clipBehavior: Clip.antiAlias,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(30),
                       topRight: Radius.circular(30)),
                   color: Color(0xFFF9F9F9),
                 ),
                 child: SingleChildScrollView(
-                  padding: EdgeInsets.symmetric(vertical: 32),
+                  padding: const EdgeInsets.symmetric(vertical: 32),
                   clipBehavior: Clip.none,
                   child: (_searchResult ?? _filtered ?? _foods).isEmpty
                       ? Container(
                           padding: const EdgeInsets.only(
                               top: 80, left: 20, right: 20),
                           child: Column(children: [
-                            Icon(
+                            const Icon(
                               Icons.search_rounded,
                               size: 100,
                             ),

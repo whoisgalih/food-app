@@ -1,4 +1,4 @@
-name: submission
+name: food_app
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -34,7 +34,6 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_svg: ^1.0.3
-  modal_bottom_sheet: ^2.0.0
   flutter_staggered_grid_view: ^0.6.1
   google_fonts: ^2.3.1
 
@@ -63,7 +62,6 @@ flutter:
   assets:
     - assets/data/
     - assets/images/icon/
-    - assets/images/recommendation/
     - assets/images/foods/
 
   # An image asset can refer to one or more resolution-specific "variants", see

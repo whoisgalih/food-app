@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:submission/pages/food_item_page.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:submission/theme/theme.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
+import 'package:food_app/pages/food_item_page.dart';
+import 'package:food_app/theme/theme.dart';
 
 class FoodItem extends StatefulWidget {
   const FoodItem({
@@ -49,23 +47,6 @@ class _FoodItemState extends State<FoodItem> {
                   name: widget.name,
                   star: widget.star,
                   price: widget.price))),
-      // onTap: () => showMaterialModalBottomSheet(
-      //     barrierColor: const Color(0x4D000000),
-      //     expand: false,
-      //     context: context,
-      //     backgroundColor: Colors.transparent,
-      //     builder: (BuildContext context) {
-      //       return Wrap(
-      //         children: [
-      //           FoodItemPage(
-      //               id: widget.id,
-      //               image: widget.image,
-      //               name: widget.name,
-      //               star: widget.star,
-      //               price: widget.price)
-      //         ],
-      //       );
-      //     }),
       child: Stack(
         children: [
           Column(
@@ -78,8 +59,8 @@ class _FoodItemState extends State<FoodItem> {
                   clipBehavior: Clip.antiAlias,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
-                    boxShadow: [
-                      const BoxShadow(
+                    boxShadow: const [
+                      BoxShadow(
                           color: Color.fromARGB(10, 0, 0, 0),
                           blurRadius: 60,
                           offset: Offset(0, 30)),
@@ -109,12 +90,12 @@ class _FoodItemState extends State<FoodItem> {
           ),
           Container(
             clipBehavior: Clip.antiAlias,
-            margin: EdgeInsets.symmetric(horizontal: 12),
+            margin: const EdgeInsets.symmetric(horizontal: 12),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: white,
-              boxShadow: [
-                const BoxShadow(
+              boxShadow: const [
+                BoxShadow(
                     color: Color.fromARGB(7, 0, 0, 0),
                     blurRadius: 40,
                     offset: Offset(0, 40)),

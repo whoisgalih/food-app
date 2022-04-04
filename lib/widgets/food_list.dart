@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:submission/widgets/food_item.dart';
+import 'package:food_app/widgets/food_item.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class FoodList extends StatelessWidget {
@@ -13,11 +13,11 @@ class FoodList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MasonryGridView.count(
-      padding: EdgeInsets.symmetric(horizontal: 30),
+      padding: const EdgeInsets.symmetric(horizontal: 30),
       crossAxisCount: 2,
       mainAxisSpacing: 17,
       crossAxisSpacing: 30,
-      physics: NeverScrollableScrollPhysics(),
+      physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       itemBuilder: (context, index) {
         final food = foods[index];

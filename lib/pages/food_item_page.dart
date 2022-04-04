@@ -1,14 +1,9 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-// import 'package:provider/provider.dart';
-import 'package:submission/models/food.dart';
-import 'package:submission/widgets/custom_button.dart';
-// import 'package:submission/provider/food_provider.dart';
-import 'package:submission/widgets/qty_stf.dart';
-import 'package:submission/theme/theme.dart';
-// import 'package:submission/widgets/qty_stl.dart';
+import 'package:food_app/widgets/custom_button.dart';
+import 'package:food_app/widgets/qty_stf.dart';
+import 'package:food_app/theme/theme.dart';
 
 class FoodItemPage extends StatefulWidget {
   final String id;
@@ -34,7 +29,6 @@ class FoodItemPage extends StatefulWidget {
 }
 
 class _FoodItemPageState extends State<FoodItemPage> {
-  int _qty = 1;
   bool like = false;
 
   @override
@@ -51,7 +45,7 @@ class _FoodItemPageState extends State<FoodItemPage> {
                 children: [
                   GestureDetector(
                       onTap: () => Navigator.pop(context),
-                      child: Icon(Icons.chevron_left_rounded, size: 24)),
+                      child: const Icon(Icons.chevron_left_rounded, size: 24)),
                   GestureDetector(
                       onTap: () => setState(() {
                             if (like) {
@@ -74,10 +68,10 @@ class _FoodItemPageState extends State<FoodItemPage> {
                   children: [
                     Container(
                       clipBehavior: Clip.antiAlias,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         boxShadow: [
-                          const BoxShadow(
+                          BoxShadow(
                               color: Color.fromARGB(7, 0, 0, 0),
                               blurRadius: 40,
                               offset: Offset(0, 40)),
@@ -92,7 +86,7 @@ class _FoodItemPageState extends State<FoodItemPage> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
                     Container(
                       width: double.infinity,
                       margin: const EdgeInsets.all(20),
@@ -156,10 +150,8 @@ class _FoodItemPageState extends State<FoodItemPage> {
                   margin: const EdgeInsets.all(20),
                   child: Row(
                     children: [
-                      QtyStf(
-                        callback: (val) => setState(() => _qty = val),
-                      ),
-                      SizedBox(width: 26),
+                      const QtyStf(),
+                      const SizedBox(width: 26),
                       Expanded(
                         child: CustomButton(
                           onPressed: () {

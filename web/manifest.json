@@ -1,6 +1,6 @@
 {
-    "name": "submission",
-    "short_name": "submission",
+    "name": "food_app",
+    "short_name": "food_app",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

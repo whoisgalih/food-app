@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:submission/theme/theme.dart';
+import 'package:food_app/theme/theme.dart';
 
 class PillText extends StatefulWidget {
   final String text;
@@ -44,15 +44,15 @@ class _PillTextState extends State<PillText>
     }
     return AnimatedContainer(
         duration: Duration(milliseconds: d),
-        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
         child: Row(
           children: [
-            Text(this.widget.text,
+            Text(widget.text,
                 style: Theme.of(context)
                     .textTheme
                     .bodyText2
                     ?.copyWith(color: widget.active ? white : black)),
-            SizedBox(width: 5),
+            const SizedBox(width: 5),
             RotationTransition(
               turns: Tween(begin: 0.0, end: 45 / 360).animate(_controller),
               child: SvgPicture.asset(
@@ -65,7 +65,7 @@ class _PillTextState extends State<PillText>
           ],
         ),
         decoration: BoxDecoration(
-            color: widget.active ? primary50 : Color(0xFFF9F9F9),
+            color: widget.active ? primary50 : const Color(0xFFF9F9F9),
             borderRadius: BorderRadius.circular(20)));
   }
 }
