@@ -48,7 +48,10 @@ class _PillTextState extends State<PillText>
         child: Row(
           children: [
             Text(this.widget.text,
-                style: body('2', widget.active ? white : black)),
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyText2
+                    ?.copyWith(color: widget.active ? white : black)),
             SizedBox(width: 5),
             RotationTransition(
               turns: Tween(begin: 0.0, end: 45 / 360).animate(_controller),

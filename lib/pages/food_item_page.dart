@@ -170,7 +170,10 @@ class _FoodItemPageState extends State<FoodItemPage> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text('Successfuly place order',
-                                      style: body('1', white)),
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyText2
+                                          ?.copyWith(color: white)),
                                 ],
                               ),
                               duration: const Duration(milliseconds: 3000),

@@ -55,7 +55,9 @@ class _QtyStfState extends State<QtyStf> {
                 width: widget.height,
                 color: _qty == 1 ? gray : primary50),
           ),
-          Text(_qty.toString(), style: widget.textStyle ?? body('2', gray)),
+          Text(_qty.toString(),
+              style: widget.textStyle ??
+                  Theme.of(context).textTheme.bodyText2?.copyWith(color: gray)),
           GestureDetector(
             onTap: () => _add(),
             child: SvgPicture.asset('assets/images/icon/add-circle.svg',
