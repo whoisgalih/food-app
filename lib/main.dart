@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Restaurant',
       theme: ThemeData(
           primaryColor: primary50,
-          scaffoldBackgroundColor: Colors.white,
+          scaffoldBackgroundColor: Color(0xFFF6F6F9),
           textTheme: TextTheme(
             headline3: GoogleFonts.poppins(
                 fontWeight: FontWeight.w800, fontSize: 32, color: white),

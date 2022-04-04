@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 // import 'package:provider/provider.dart';
@@ -33,121 +35,166 @@ class FoodItemPage extends StatefulWidget {
 
 class _FoodItemPageState extends State<FoodItemPage> {
   int _qty = 1;
+  bool like = false;
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      top: false,
-      child: Stack(children: [
-        Container(
-          clipBehavior: Clip.antiAlias,
-          decoration: BoxDecoration(
-            borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(30), topRight: Radius.circular(30)),
-            color: white,
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Image(
-                  image: AssetImage('assets/images/foods/' + widget.image),
-                  height: 300,
-                  width: double.infinity,
-                  fit: BoxFit.cover),
-              Container(
-                margin: const EdgeInsets.all(20),
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              margin: const EdgeInsets.all(20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  GestureDetector(
+                      onTap: () => Navigator.pop(context),
+                      child: Icon(Icons.chevron_left_rounded, size: 24)),
+                  GestureDetector(
+                      onTap: () => setState(() {
+                            if (like) {
+                              like = false;
+                            } else {
+                              like = true;
+                            }
+                          }),
+                      child: Icon(
+                          like
+                              ? Icons.favorite_rounded
+                              : Icons.favorite_border_rounded,
+                          size: 24)),
+                ],
+              ),
+            ),
+            Expanded(
+              child: SingleChildScrollView(
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              widget.name,
-                              style: title('1'),
-                            ),
-                            const SizedBox(height: 8),
-                            Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  SvgPicture.asset(
-                                      'assets/images/icon/star.svg',
-                                      height: 16,
-                                      width: 16),
-                                  const SizedBox(width: 8),
-                                  SvgPicture.asset(
-                                      'assets/images/icon/star.svg',
-                                      height: 16,
-                                      width: 16),
-                                  const SizedBox(width: 8),
-                                  SvgPicture.asset(
-                                      'assets/images/icon/star.svg',
-                                      height: 16,
-                                      width: 16),
-                                  const SizedBox(width: 8),
-                                  SvgPicture.asset(
-                                      'assets/images/icon/star.svg',
-                                      height: 16,
-                                      width: 16),
-                                  const SizedBox(width: 8),
-                                  SvgPicture.asset(
-                                      'assets/images/icon/star.svg',
-                                      height: 16,
-                                      width: 16),
-                                  const SizedBox(width: 8),
-                                  Text(widget.star, style: body('2', gray)),
-                                ])
-                          ],
+                    Container(
+                      clipBehavior: Clip.antiAlias,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          const BoxShadow(
+                              color: Color.fromARGB(7, 0, 0, 0),
+                              blurRadius: 40,
+                              offset: Offset(0, 40)),
+                        ],
+                      ),
+                      child: FractionallySizedBox(
+                        widthFactor: 0.7,
+                        child: Image(
+                          image:
+                              AssetImage('assets/images/foods/' + widget.image),
+                          fit: BoxFit.cover,
                         ),
-                        QtyStf(
-                          callback: (val) => setState(() => _qty = val),
-                        )
-                      ],
+                      ),
                     ),
-                    const SizedBox(height: 24),
-                    Text(widget.price, style: title('1')),
-                    const SizedBox(height: 32),
-                    CustomButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                          content: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    SizedBox(height: 30),
+                    Container(
+                      width: double.infinity,
+                      margin: const EdgeInsets.all(20),
+                      child: Column(
+                        children: [
+                          Text(
+                            widget.name,
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.headline4,
+                          ),
+                          const SizedBox(height: 4),
+                          Text(widget.price,
+                              textAlign: TextAlign.center,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyText2
+                                  ?.copyWith(color: primary50)),
+                        ],
+                      ),
+                    ),
+                    Container(
+                        width: double.infinity,
+                        margin: const EdgeInsets.symmetric(
+                            vertical: 10, horizontal: 20),
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('Successfuly place order',
-                                  style: body('1', white)),
-                            ],
-                          ),
-                          duration: const Duration(milliseconds: 3000),
-                          padding: const EdgeInsets.all(16),
-                          margin: const EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 24),
-                          behavior: SnackBarBehavior.floating,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                        ));
-                      },
-                      isOrange: true,
-                      text: 'Place Order',
-                    )
+                              Text(
+                                'Food Info',
+                                style: Theme.of(context).textTheme.subtitle2,
+                              ),
+                              const SizedBox(height: 2),
+                              Text(
+                                  'Nulla ut voluptate eu commodo consequat amet.',
+                                  style: Theme.of(context).textTheme.bodyText2),
+                            ])),
+                    Container(
+                        width: double.infinity,
+                        margin: const EdgeInsets.symmetric(
+                            vertical: 10, horizontal: 20),
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Delivery Info',
+                                style: Theme.of(context).textTheme.subtitle2,
+                              ),
+                              const SizedBox(height: 2),
+                              Text(
+                                  'Mollit nostrud veniam mollit qui reprehenderit aliquip proident do non nisi dolore.',
+                                  style: Theme.of(context).textTheme.bodyText2),
+                            ])),
                   ],
                 ),
-              )
-            ],
-          ),
+              ),
+            ),
+            ClipRect(
+              child: BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                child: Container(
+                  margin: const EdgeInsets.all(20),
+                  child: Row(
+                    children: [
+                      QtyStf(
+                        callback: (val) => setState(() => _qty = val),
+                      ),
+                      SizedBox(width: 26),
+                      Expanded(
+                        child: CustomButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              content: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text('Successfuly place order',
+                                      style: body('1', white)),
+                                ],
+                              ),
+                              duration: const Duration(milliseconds: 3000),
+                              padding: const EdgeInsets.all(16),
+                              margin: const EdgeInsets.symmetric(
+                                  horizontal: 20, vertical: 24),
+                              behavior: SnackBarBehavior.floating,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                            ));
+                          },
+                          isOrange: true,
+                          text: 'Place Order',
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            )
+          ],
         ),
-        Center(
-            child: Padding(
-                padding: const EdgeInsets.only(top: 16),
-                child: SvgPicture.asset(
-                    'assets/images/icon/action bottom sheet.svg',
-                    height: 4,
-                    width: 40)))
-      ]),
+      ),
     );
   }
 }

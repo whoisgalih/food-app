@@ -40,23 +40,32 @@ class _FoodItemState extends State<FoodItem> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => showMaterialModalBottomSheet(
-          barrierColor: const Color(0x4D000000),
-          expand: false,
-          context: context,
-          backgroundColor: Colors.transparent,
-          builder: (BuildContext context) {
-            return Wrap(
-              children: [
-                FoodItemPage(
-                    id: widget.id,
-                    image: widget.image,
-                    name: widget.name,
-                    star: widget.star,
-                    price: widget.price)
-              ],
-            );
-          }),
+      onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => FoodItemPage(
+                  id: widget.id,
+                  image: widget.image,
+                  name: widget.name,
+                  star: widget.star,
+                  price: widget.price))),
+      // onTap: () => showMaterialModalBottomSheet(
+      //     barrierColor: const Color(0x4D000000),
+      //     expand: false,
+      //     context: context,
+      //     backgroundColor: Colors.transparent,
+      //     builder: (BuildContext context) {
+      //       return Wrap(
+      //         children: [
+      //           FoodItemPage(
+      //               id: widget.id,
+      //               image: widget.image,
+      //               name: widget.name,
+      //               star: widget.star,
+      //               price: widget.price)
+      //         ],
+      //       );
+      //     }),
       child: Stack(
         children: [
           Column(

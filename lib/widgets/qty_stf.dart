@@ -44,7 +44,7 @@ class _QtyStfState extends State<QtyStf> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 91,
+      width: 75,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -59,7 +59,7 @@ class _QtyStfState extends State<QtyStf> {
           GestureDetector(
             onTap: () => _add(),
             child: SvgPicture.asset('assets/images/icon/add-circle.svg',
-                height: widget.height, width: widget.height),
+                height: widget.height, width: widget.height, color: primary50),
           ),
         ],
       ),
