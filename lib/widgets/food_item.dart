@@ -8,14 +8,12 @@ class FoodItem extends StatefulWidget {
     required this.id,
     required this.image,
     required this.name,
-    required this.star,
     required this.price,
   }) : super(key: key);
 
   final String id;
   final String image;
   final String name;
-  final String star;
   final String price;
 
   @override
@@ -29,7 +27,7 @@ class _FoodItemState extends State<FoodItem> {
     try {
       RenderBox renderBox =
           _imageKey.currentContext?.findRenderObject() as RenderBox;
-      return renderBox.size.height;
+      return renderBox.size.width;
     } catch (e) {
       return 0;
     }
@@ -45,7 +43,6 @@ class _FoodItemState extends State<FoodItem> {
                   id: widget.id,
                   image: widget.image,
                   name: widget.name,
-                  star: widget.star,
                   price: widget.price))),
       child: Stack(
         children: [
@@ -101,11 +98,15 @@ class _FoodItemState extends State<FoodItem> {
                     offset: Offset(0, 40)),
               ],
             ),
-            child: Image(
-                key: _imageKey,
-                image: AssetImage('assets/images/foods/' + widget.image),
-                width: double.infinity,
-                fit: BoxFit.cover),
+            child: AspectRatio(
+              aspectRatio: 1 / 1,
+              child: Image(
+                  key: _imageKey,
+                  image: AssetImage('assets/images/foods/' + widget.image),
+                  width: double.infinity,
+                  // height: _getImageHeight(),
+                  fit: BoxFit.cover),
+            ),
           ),
         ],
       ),

@@ -9,7 +9,6 @@ class FoodItemPage extends StatefulWidget {
   final String id;
   final String image;
   final String name;
-  final String star;
   final String price;
 
   const FoodItemPage({
@@ -17,7 +16,6 @@ class FoodItemPage extends StatefulWidget {
     required this.id,
     required this.image,
     required this.name,
-    required this.star,
     required this.price,
   }) : super(key: key);
 
@@ -79,10 +77,13 @@ class _FoodItemPageState extends State<FoodItemPage> {
                       ),
                       child: FractionallySizedBox(
                         widthFactor: 0.7,
-                        child: Image(
-                          image:
-                              AssetImage('assets/images/foods/' + widget.image),
-                          fit: BoxFit.cover,
+                        child: AspectRatio(
+                          aspectRatio: 1 / 1,
+                          child: Image(
+                            image: AssetImage(
+                                'assets/images/foods/' + widget.image),
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                     ),

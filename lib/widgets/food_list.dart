@@ -25,7 +25,6 @@ class FoodList extends StatelessWidget {
             id: food['id'],
             image: food['image'],
             name: food['name'],
-            star: food['star'],
             price: food['price']);
       },
       itemCount: foods.length,

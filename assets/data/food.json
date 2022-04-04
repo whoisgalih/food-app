@@ -1,36 +1,46 @@
 {
   "foods": [
     {
-      "id": "df79d6ac-88a2-11ec-a8a3-0242ac120002",
-      "image": "Intersect.png",
-      "name": "Meatball Sweatie",
-      "star": "4.9",
+      "id": "1",
+      "image": "victoria-shes-UC0HZdUitWY-unsplash.jpg",
+      "name": "Sate Ayam",
       "price": "Rp63.500",
-      "tags": ["Dinner Food", "Hot Food"]
+      "tags": ["Family", "Hot", "Super"]
     },
     {
-      "id": "fe1a9ef2-88a2-11ec-a8a3-0242ac120002",
-      "image": "Intersect-2.png",
-      "name": "Noodle Ex",
-      "star": "4.8",
-      "price": "Rp42.000",
-      "tags": ["Dinner Food", "Economic Food", "Hot Food", "Family Food", "Super Food"]
+      "id": "2",
+      "image": "anna-tukhfatullina-food-photographer-stylist-Mzy-OjtCI70-unsplash.jpg",
+      "name": "Raspberry Cake",
+      "price": "Rp65.000",
+      "tags": ["Family", "Dessert"]
     },
     {
-      "id": "0a00e906-88a3-11ec-a8a3-0242ac120002",
-      "image": "Intersect-1.png",
-      "name": "Burger Ala Ala",
-      "star": "4.7",
-      "price": "Rp55.500",
-      "tags": ["Dinner Food"]
+      "id": "3",
+      "image": "joseph-gonzalez-fdlZBWIP0aM-unsplash.jpg",
+      "name": "Toast Bread with Egg",
+      "price": "Rp47.500",
+      "tags": ["Breakfast", "Economic"]
     },
     {
-      "id": "11e7f6aa-88a3-11ec-a8a3-0242ac120002",
-      "image": "Intersect-3.png",
-      "name": "Chicken Collage",
-      "star": "4.5",
-      "price": "Rp78.200",
-      "tags": ["Hot Food", "Family Food", "Super Food"]
+      "id": "4",
+      "image": "joseph-gonzalez-zcUgjyqEwe8-unsplash.jpg",
+      "name": "Fruity Toasted Bread",
+      "price": "Rp34.200",
+      "tags": ["Dessert", "Dinner", "Economic"]
+    },
+    {
+      "id": "5",
+      "image": "ian-dooley-TLD6iCOlyb0-unsplash.jpg",
+      "name": "Ice Cream",
+      "price": "Rp25.000",
+      "tags": ["Dessert", "Dinner"]
+    },
+    {
+      "id": "6",
+      "image": "anh-nguyen-kcA-c3f_3FE-unsplash.jpg",
+      "name": "Salad Blender",
+      "price": "Rp45.000",
+      "tags": ["Breakfast", "Healthy"]
     }
   ]
 }
