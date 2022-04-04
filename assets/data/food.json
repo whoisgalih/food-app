@@ -1,0 +1,36 @@
+{
+  "foods": [
+    {
+      "id": "df79d6ac-88a2-11ec-a8a3-0242ac120002",
+      "image": "Intersect.png",
+      "name": "Meatball Sweatie",
+      "star": "4.9",
+      "price": "Rp63.500",
+      "tags": ["Dinner Food", "Hot Food"]
+    },
+    {
+      "id": "fe1a9ef2-88a2-11ec-a8a3-0242ac120002",
+      "image": "Intersect-2.png",
+      "name": "Noodle Ex",
+      "star": "4.8",
+      "price": "Rp42.000",
+      "tags": ["Dinner Food", "Economic Food", "Hot Food", "Family Food", "Super Food"]
+    },
+    {
+      "id": "0a00e906-88a3-11ec-a8a3-0242ac120002",
+      "image": "Intersect-1.png",
+      "name": "Burger Ala Ala",
+      "star": "4.7",
+      "price": "Rp55.500",
+      "tags": ["Dinner Food"]
+    },
+    {
+      "id": "11e7f6aa-88a3-11ec-a8a3-0242ac120002",
+      "image": "Intersect-3.png",
+      "name": "Chicken Collage",
+      "star": "4.5",
+      "price": "Rp78.200",
+      "tags": ["Hot Food", "Family Food", "Super Food"]
+    }
+  ]
+}
