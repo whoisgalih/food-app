@@ -18,15 +18,15 @@ class MyApp extends StatelessWidget {
           primaryColor: primary50,
           scaffoldBackgroundColor: const Color(0xFFF9F9F9),
           textTheme: TextTheme(
-            headline3: GoogleFonts.poppins(
+            displaySmall: GoogleFonts.poppins(
                 fontWeight: FontWeight.w800, fontSize: 32, color: white),
-            headline4: GoogleFonts.poppins(
+            headlineMedium: GoogleFonts.poppins(
                 fontWeight: FontWeight.w600, fontSize: 20, color: black),
-            subtitle1: GoogleFonts.poppins(
+            titleMedium: GoogleFonts.poppins(
                 fontWeight: FontWeight.w600, fontSize: 16, color: black),
-            subtitle2: GoogleFonts.poppins(
+            titleSmall: GoogleFonts.poppins(
                 fontWeight: FontWeight.w600, fontSize: 14, color: black),
-            bodyText2: GoogleFonts.poppins(
+            bodyMedium: GoogleFonts.poppins(
                 fontWeight: FontWeight.w400, fontSize: 13, color: black),
           )),
       home: const LandingPage(),

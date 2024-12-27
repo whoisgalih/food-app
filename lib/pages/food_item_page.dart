@@ -96,14 +96,14 @@ class _FoodItemPageState extends State<FoodItemPage> {
                           Text(
                             widget.name,
                             textAlign: TextAlign.center,
-                            style: Theme.of(context).textTheme.headline4,
+                            style: Theme.of(context).textTheme.headlineMedium,
                           ),
                           const SizedBox(height: 4),
                           Text(widget.price,
                               textAlign: TextAlign.center,
                               style: Theme.of(context)
                                   .textTheme
-                                  .bodyText2
+                                  .bodyMedium
                                   ?.copyWith(color: primary50)),
                         ],
                       ),
@@ -117,12 +117,12 @@ class _FoodItemPageState extends State<FoodItemPage> {
                             children: [
                               Text(
                                 'Food Info',
-                                style: Theme.of(context).textTheme.subtitle2,
+                                style: Theme.of(context).textTheme.titleSmall,
                               ),
                               const SizedBox(height: 2),
                               Text(
                                   'Nulla ut voluptate eu commodo consequat amet.',
-                                  style: Theme.of(context).textTheme.bodyText2),
+                                  style: Theme.of(context).textTheme.bodyMedium),
                             ])),
                     Container(
                         width: double.infinity,
@@ -133,12 +133,12 @@ class _FoodItemPageState extends State<FoodItemPage> {
                             children: [
                               Text(
                                 'Delivery Info',
-                                style: Theme.of(context).textTheme.subtitle2,
+                                style: Theme.of(context).textTheme.titleSmall,
                               ),
                               const SizedBox(height: 2),
                               Text(
                                   'Mollit nostrud veniam mollit qui reprehenderit aliquip proident do non nisi dolore.',
-                                  style: Theme.of(context).textTheme.bodyText2),
+                                  style: Theme.of(context).textTheme.bodyMedium),
                             ])),
                   ],
                 ),
@@ -165,7 +165,7 @@ class _FoodItemPageState extends State<FoodItemPage> {
                                   Text('Successfuly place order',
                                       style: Theme.of(context)
                                           .textTheme
-                                          .bodyText2
+                                          .bodyMedium
                                           ?.copyWith(color: white)),
                                 ],
                               ),

@@ -50,7 +50,7 @@ class _PillTextState extends State<PillText>
             Text(widget.text,
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText2
+                    .bodyMedium
                     ?.copyWith(color: widget.active ? white : black)),
             const SizedBox(width: 5),
             RotationTransition(

@@ -51,7 +51,10 @@ class _QTYState extends State<QTY> {
           ),
           Text(_qty.toString(),
               style: widget.textStyle ??
-                  Theme.of(context).textTheme.bodyText2?.copyWith(color: gray)),
+                  Theme.of(context)
+                      .textTheme
+                      .bodyMedium
+                      ?.copyWith(color: gray)),
           GestureDetector(
             onTap: () => _add(),
             child: SvgPicture.asset('assets/images/icon/add-circle.svg',

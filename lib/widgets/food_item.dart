@@ -67,13 +67,13 @@ class FoodItem extends StatelessWidget {
                       ),
                       const SizedBox(height: 20),
                       Text(name,
-                          style: Theme.of(context).textTheme.subtitle1,
+                          style: Theme.of(context).textTheme.titleMedium,
                           textAlign: TextAlign.center),
                       const SizedBox(height: 12),
                       Text(price,
                           style: Theme.of(context)
                               .textTheme
-                              .subtitle1
+                              .titleMedium
                               ?.copyWith(
                                   color: primary50,
                                   fontWeight: FontWeight.w700))

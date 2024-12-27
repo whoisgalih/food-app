@@ -100,6 +100,7 @@ class _FoodPageState extends State<FoodPage> {
     return Scaffold(
       backgroundColor: const Color(0xFFEEEEEE),
       body: SafeArea(
+        bottom: false,
         child: Column(
           children: [
             Container(
@@ -117,7 +118,7 @@ class _FoodPageState extends State<FoodPage> {
                       Expanded(
                         child: TextField(
                           controller: _controller,
-                          style: Theme.of(context).textTheme.bodyText2,
+                          style: Theme.of(context).textTheme.bodyMedium,
                           onChanged: search(_controller.text),
                           decoration: InputDecoration(
                             filled: true,
@@ -125,7 +126,7 @@ class _FoodPageState extends State<FoodPage> {
                             hintText: 'find food by name',
                             hintStyle: Theme.of(context)
                                 .textTheme
-                                .bodyText2
+                                .bodyMedium
                                 ?.copyWith(color: const Color(0xFF787777)),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(30),
@@ -207,7 +208,7 @@ class _FoodPageState extends State<FoodPage> {
                             const SizedBox(height: 24),
                             Text(
                               'Item not found',
-                              style: Theme.of(context).textTheme.headline4,
+                              style: Theme.of(context).textTheme.headlineMedium,
                               textAlign: TextAlign.center,
                             ),
                           ]))

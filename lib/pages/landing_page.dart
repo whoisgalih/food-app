@@ -10,48 +10,53 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: primary50,
-        body: SafeArea(
-          child: Container(
-            margin: const EdgeInsets.symmetric(horizontal: 48, vertical: 32),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.all(20),
-                      decoration: const BoxDecoration(
-                        color: Colors.white,
-                        shape: BoxShape.circle,
-                      ),
-                      child: SvgPicture.asset(
-                          'assets/images/icon/restaurant.svg',
-                          color: primary50,
-                          height: 20,
-                          width: 20),
+      backgroundColor: primary50,
+      body: SafeArea(
+        child: Container(
+          margin: const EdgeInsets.symmetric(horizontal: 48, vertical: 32),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(20),
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
                     ),
-                    const SizedBox(height: 30),
-                    Text(
-                      'Food for Everyone',
-                      style: Theme.of(context).textTheme.headline3,
-                    )
-                  ],
-                ),
-                CustomButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const FoodPage()));
-                    },
-                    isOrange: false,
-                    text: 'Continue')
-              ],
-            ),
+                    child: SvgPicture.asset(
+                      'assets/images/icon/restaurant.svg',
+                      color: primary50,
+                      height: 20,
+                      width: 20,
+                    ),
+                  ),
+                  const SizedBox(height: 30),
+                  Text(
+                    'Food for Everyone',
+                    style: Theme.of(context).textTheme.displaySmall,
+                  )
+                ],
+              ),
+              CustomButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const FoodPage(),
+                    ),
+                  );
+                },
+                isOrange: false,
+                text: 'Continue',
+              )
+            ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
